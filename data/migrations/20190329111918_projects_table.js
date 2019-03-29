@@ -4,11 +4,10 @@ exports.up = function(knex) {
       tbl.increments()
 
       tbl
-      .string('name', 128)
-      .string('description', 256)
-      .boolean('completed')
-      .notNullable()
-      .unique()
+      tbl.string('name', 128).notNullable()
+      tbl.string('description', 256).notNullable()
+      tbl.boolean('completed')
+     
   })
 };
 

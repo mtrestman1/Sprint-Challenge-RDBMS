@@ -4,14 +4,12 @@ exports.up = function(knex) {
       tbl.increments()
 
       tbl
-      .string('description', 256)
-      .string('notes', 256)
-      .notNullable()
-      .unique()
+      tbl.string('description', 256).notNullable();
+      tbl.string('notes', 256).notNullable()
+      tbl.boolean('completed')
 
       tbl
       .integer('project_id')
-      .unsigned()
       .references('id')
       .inTable('projects')
       .onDelete('CASCADE')
